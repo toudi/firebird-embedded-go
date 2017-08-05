@@ -6,6 +6,7 @@ package main
 #include "ibase.h"
 #include <stdio.h>
 
+// we can't call variadic functions from go, therefore this is a simple wrapper
 int isc_start_transaction2(ISC_STATUS *status_vector, isc_tr_handle *trans_handle, short db_handle_count, isc_db_handle *db_handle, unsigned short tpb_length, char *tpb_address)
 {
     return isc_start_transaction(status_vector, trans_handle, db_handle_count, db_handle, tpb_length, tpb_address);
